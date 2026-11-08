@@ -7,7 +7,6 @@ output_file = sys.argv[2]
 
 throughput = defaultdict(int)
 
-# Read received packets
 with open(input_file, "r") as file:
     for line in file:
         parts = line.split()
@@ -19,7 +18,6 @@ with open(input_file, "r") as file:
             second = int(time)
             throughput[second] += size
 
-# Write throughput for every second
 with open(output_file, "w") as file:
     file.write("# Time(s) Throughput(Mbps)\n")
 
